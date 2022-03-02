@@ -7,7 +7,9 @@ const {
   deleteGoal,
 } = require('../controller/goalController')
 
-router.route('/').get(getGoals).post(setGoal)
+const { protect } = require('../middleware/authMiddleware')
+
+router.route('/').get(protect, getGoals).post(protect, setGoal)
 // Since a couple of line below (get and post) do the same thing as just above
 // we can chain them
 // because they're in the same path
@@ -17,7 +19,7 @@ router.route('/').get(getGoals).post(setGoal)
 // // creates a goal
 // router.post('/', setGoal)
 
-router.route('/:id').delete(deleteGoal).put(updateGoal)
+router.route('/:id').delete(protect, deleteGoal).put(protect, updateGoal)
 // // updates a goal
 // router.put('/:id', updateGoal)
 
