@@ -75,6 +75,7 @@ const deleteGoal = asyncHandler(async (req, res) => {
     throw new Error('Goal not found')
   }
 
+<<<<<<< HEAD
   const user = await User.findById(req.user.id)
 
   // Checks for user
@@ -90,6 +91,9 @@ const deleteGoal = asyncHandler(async (req, res) => {
   }
 
   await goal.remove() // it deletes the id from database
+=======
+  await goal.remove() // it deletes any id from database
+>>>>>>> 1eb0174ce69a540996b7ac3a05599a598755b159
   // there's no reason to store in a variable
 
   res.status(200).json({ id: req.params.id })
