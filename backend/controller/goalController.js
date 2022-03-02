@@ -57,7 +57,7 @@ const deleteGoal = asyncHandler(async (req, res) => {
     throw new Error('Goal not found')
   }
 
-  await goal.remove() // it deletes a id from database
+  await goal.remove() // it deletes any id from database
   // there's no reason to store in a variable
 
   res.status(200).json({ id: req.params.id })
