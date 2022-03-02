@@ -14,6 +14,7 @@ app.use(express.json()) // provides reading requests as a json type
 app.use(express.urlencoded({ extended: false }))
 
 app.use('/api/goals', require('./routes/goalRoutes'))
+app.use('/api/users', require('./routes/userRoutes'))
 
 app.use(errorHandler) // overwrites the default Express Error Handler
 
