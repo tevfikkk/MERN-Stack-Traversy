@@ -11,7 +11,7 @@ const Login = () => {
 
   const onChange = e => {
     setFormData(prevState => ({
-      ...prevState,
+      ...prevState, // we want all the other fields
       [e.target.name]: e.target.value,
     }))
   }
